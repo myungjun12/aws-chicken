@@ -25,7 +25,7 @@ const ChickDetail = () => {
 
 
     useEffect( () => {
-        axios.get(`http://localhost:9090/api/chicken/${id}`)
+        axios.get(`http://localhost:80/api/chicken/${id}`)
         .then(response => {
             setChicken(response.data);
             setEditData({
@@ -50,7 +50,7 @@ const ChickDetail = () => {
 
     const handle수정한내용저장 = () => {
         // axios 이용해서 주소 불러오기
-        axios.put(`http://localhost:9090/api/chicken/${id}`, editData)
+        axios.put(`http://localhost:80/api/chicken/${id}`, editData)
         .then(response => {
             setChicken(response.data) // 기존에 DB에 저장된 내용 가져오기
             setIsEditing(false);
@@ -70,7 +70,7 @@ const ChickDetail = () => {
     }
 
     const handle삭제하기 = () => {
-        axios.delete(`http://localhost:9090/api/chicken/${id}`)
+        axios.delete(`http://localhost:80/api/chicken/${id}`)
         .then(() => {
             alert("삭제되었습니다.");
             navigate("/");//삭제하고 메인으로 이동하기

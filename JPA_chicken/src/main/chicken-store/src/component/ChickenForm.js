@@ -13,7 +13,7 @@ const ChickenForm = () => {
     }
     // 스프링부트 연결 후 전달
     const 제출버튼 = () => {
-        axios.post("http://localhost:9090/api/chicken", 전달데이터)
+        axios.post("http://localhost:80/api/chicken", 전달데이터)
         .then((response) => {
             // 데이터 무사히 전달했을 경우
             alert("메뉴가 성공적으로 등록되었습니다.");
